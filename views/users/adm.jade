@@ -1,0 +1,154 @@
+
+a.sidebar-toggle(href='javascript:;' style='font-size:18px;color:#2C3E50')
+  i.fa.fa-caret-square-o-down='  Monstrar Panel'
+span#hide-btn.close-btn
+  i.fa.fa-times(aria-hidden='true')
+#user-profil.container-1
+  ul#side.nav.navbar-nav-1.side-nav
+    li.side-user
+      img.img-circle(src=user.img)
+      p.welcome
+        i.fa.fa-key(style='font-size:18px;color:#fff') 
+          |  Sesión de ...
+        form(action="" method="post" enctype="multipart/form-data")
+          div(class="form-group")
+            label(for="Foto")= 'Foto'
+            input(type="file" name="Foto" placeholder="Foto")  
+      p
+        a(href="/users/panel" class="" style='font-size:28px;color:#fff')= user.nombre +"  "
+          i.fa.fa-caret-square-o-up
+    li.nav-search
+      form.navbar-form
+        .input-group
+          input.form-control(type='text', placeholder='Search')
+          .input-group-btn
+            button.btn.btn-default(type='submit')
+              i.glyphicon.glyphicon-search
+    li.dashboard
+      a.active(href='/users/panel')
+        i.fa.fa-bars
+        |  Tablero
+    li.panel
+      a(href='javascript:;', data-toggle='collapse', data-target='#charts')
+        i.fa.fa-users
+        |  Usuarios 
+        i.fa.fa-caret-down.pull-right
+      ul#charts.collapse.nav
+        li
+          a(href='/users/showUser')
+       
+            i.fa.fa-angle-double-right
+            |  Mostrar Usuarios
+        li
+          a(href='#')
+            i.fa.fa-angle-double-right
+            |  Modificar Usuario
+        li
+          a(href='#')
+            i.fa.fa-angle-double-right
+            |  Eliminar Usuario
+    li.panel
+      a(href='javascript:;', data-toggle='collapse', data-target='#calendar')
+        i.fa.fa-calendar
+        |  calendar 
+        i.fa.fa-caret-down.pull-right
+      ul#calendar.collapse.nav
+        li
+          a(href='#')
+            i.fa.fa-angle-double-right
+            |  Datos de la empresa
+        li
+          a(href='#')
+            i.fa.fa-angle-double-right
+            |  graficas
+    li.panel
+      a(href='javascript:;', data-toggle='collapse', data-target='#clipboard')
+        i.fa.fa-clipboard
+        |  clipboard 
+        i.fa.fa-caret-down.pull-right
+      ul#clipboard.collapse.nav
+        li
+          a(href='#')
+            i.fa.fa-angle-double-right
+            |  Flot Charts
+        li
+          a(href='#')
+            i.fa.fa-angle-double-right
+            |  Morris.js
+    li.panel
+      a(href='javascript:;', data-toggle='collapse', data-target='#edit')
+        i.fa.fa-edit
+        |  edit 
+        i.fa.fa-caret-down.pull-right
+      ul#edit.collapse.nav
+        li
+          a(href='#')
+            i.fa.fa-angle-double-right
+            |  Flot Charts
+        li
+          a(href='#')
+            i.fa.fa-angle-double-right
+            |  Morris.js
+    li.panel
+      a(href='javascript:;', data-toggle='collapse', data-target='#inbox')
+        i.fa.fa-inbox
+        |  inbox 
+        i.fa.fa-caret-down.pull-right
+      ul#inbox.collapse.nav
+        li
+          a(href='#')
+            i.fa.fa-angle-double-right
+            |  Flot Charts
+        li
+          a(href='#')
+            i.fa.fa-angle-double-right
+            |  Morris.js
+    li.panel
+      a(href='javascript:;', data-toggle='collapse', data-target='#cogs')
+        i.fa.fa-cogs
+        |  cogs 
+        i.fa.fa-caret-down.pull-right
+      ul#cogs.collapse.nav
+        li
+          a(href='#')
+            i.fa.fa-angle-double-right
+            |  Flot Charts
+        li
+          a(href='#')
+            i.fa.fa-angle-double-right
+            |  Morris.js
+    li.panel
+      a(href='javascript:;', data-toggle='collapse', data-target='#paper')
+        i.fa.fa-paper-plane
+        |  paper 
+        i.fa.fa-caret-down.pull-right
+      ul#paper.collapse.nav
+        li
+          a(href='#')
+            i.fa.fa-angle-double-right
+            |  Flot Charts
+        li
+          a(href='#')
+            i.fa.fa-angle-double-right
+            |  Morris.js
+.container-2
+  #page-wrapper
+    .row
+      .col-md-12
+        .page-title
+    script(type='text/javascript').
+      $(document).ready(function(){
+      $(".sidebar-toggle").click(function(){
+      $(this).hide();
+      $("#user-profil").show();
+      $("#hide-btn").show();
+      $(".container-2").css("width", "85%");
+      });
+      $("#hide-btn").click(function(){
+      $(this).hide();
+      $("#user-profil").hide();
+      $(".sidebar-toggle").show();
+      $(".container-2").css("width", "100%");
+      });
+      });
+      

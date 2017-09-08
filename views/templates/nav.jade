@@ -1,0 +1,183 @@
+link(rel='stylesheet', href='/stylesheets/nav.css')
+link(rel='stylesheet', href='/stylesheets/modal.css')
+script(src='https://use.fontawesome.com/07b0ce5d10.js')
+nav#top-nav.navbar.navbar-inverse.top-navbar
+  .container-fluid
+    .navbar-header
+      a.navbar-brand(rel='Inicio', href='/', title='Mundo Ejecutivo')
+        img.img-responsive(src="../images/me1.png", width='150', height='20')    
+    
+    ul.social-icon.pull-right.list-inline
+      if !isAuthenticated
+        li
+          button#myBtn.btn.btn-link.btn-primary(type='button') Registrarse
+          #myModal.modal.fade(role='dialog')
+            .modal-dialog
+              // Modal content
+              .modal-content
+                  .modal-header(style='padding:35px 50px;')
+                      button.close(type='button', data-dismiss='modal') ×
+                      h4
+                      span.glyphicon.glyphicon-lock
+                      |  Registrarme
+                  .modal-body(style='padding:40px 50px;')
+                      form(action='/auth/signup' method='post' autocomplete='off')
+                              
+                          .form-group
+                              label(for='email')
+                                  span.glyphicon.glyphicon-envelope
+                                  |  Email
+                              input#usrname.form-control(required type='email' name='email' placeholder='Email')
+                          .form-group
+                              label(for='nombre')
+                              span.glyphicon.glyphicon-user
+                              |  Nombre
+                              input#psw.form-control(required type='text' name='nombre' placeholder='Nombre' )
+                          .form-group
+                              label(for='password')
+                              span.glyphicon.glyphicon-eye-open
+                              |  Password
+                              input#psw.form-control(required type='password' name='password' placeholder='Password' )
+                          .checkbox
+                              label
+                              input(type='checkbox', value='', checked='')
+                              | Remember me
+                          button.btn.btn-success.btn-block(type='submit')
+                              span.glyphicon.glyphicon-off
+                              |  Registrarme
+                  .modal-footer
+                      button.btn.btn-danger.btn-default.pull-left(type='submit', data-dismiss='modal')
+                          span.glyphicon.glyphicon-remove
+                          |  Cancel
+                      p
+                      | Not a member? 
+                      a(href='#') Sign Up
+                      p
+                      | Forgot 
+                      a(href='#') Password?
+          script.
+              $(document).ready(function(){
+              $("#myBtn").click(function(){
+              $("#myModal").modal();
+              });
+              });
+          //C:\Users\Carlos\Documents\9no\proyecto\MundoEjecutivo-master\views\users\signup.jade
+
+        li
+          button#myBtn1.btn.btn-link.btn-primary(type='button') Iniciar Sesión
+          #myModal1.modal.fade(role='dialog')
+            .modal-dialog
+                // Modal content
+                .modal-content
+                    .modal-header(style='padding:35px 50px;')
+                        button.close(type='button', data-dismiss='modal') ×
+                        h4
+                        span.glyphicon.glyphicon-lock
+                        |  Iniciar Sesión
+                    .modal-body(style='padding:40px 50px;')
+                        form(action='/auth/signin' method='post' autocomplete='off')
+                                
+                          .form-group
+                              label(for='email')
+                                  span.glyphicon.glyphicon-envelope
+                                  |  Email
+                              input#psw.form-control(formnovalidate="formnovalidate" type='email' name='username' placeholder='Email' autofocus )
+                          .form-group
+                              label(for='password')
+                              span.glyphicon.glyphicon-eye-open
+                              |  Password
+                              input#psw.form-control(required type='password' name='password' placeholder='Password' )
+                          .checkbox
+                              label
+                              input(type='checkbox', value='', checked='')
+                              | Remember me
+                          button.btn.btn-success.btn-block(type='submit')
+                              span.glyphicon.glyphicon-off
+                              |  Iniciar Sesión
+                    .modal-footer
+                      button.btn.btn-danger.btn-default.pull-left(type='submit', data-dismiss='modal')
+                          span.glyphicon.glyphicon-remove
+                          |  Cancel
+                      p
+                      | Not a member? 
+                      a(href='#') Sign Up
+                      p
+                      | Forgot 
+                      a(href='#') Password?
+          script.
+              $(document).ready(function(){
+              $("#myBtn1").click(function(){
+              $("#myModal1").modal();
+              });
+              });
+      if isAuthenticated
+        //p( style='font-size:18px;color:#fff')='Bienvenido..'
+        d(class="dropdown")
+          a(href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+          aria-haspopup="true" aria-expanded="false" class="" style='font-size:28px;color:#fff')='Bienvenido..  '+user.nombre
+            span(class="caret")
+            li(class="dropdown-menu")
+              a(href="/users/panel" )
+                i.fa.fa-user(style='font-size:18px;color:#2C3E50')=' Perfil '
+              a(href="/auth/logout")
+                i.fa.fa-user-times(style='font-size:18px;color:#2C3E50')=' Salir'    
+     ul.social-icon.pull-right.list-inline
+      form.navbar-form.navbar
+        .input-group
+          input.form-control(type='text', placeholder='Search')
+          .input-group-btn
+            button.btn.btn-default(type='submit')
+              i.glyphicon.glyphicon-search
+    ul.social-icon.pull-right.list-inline
+      li.dropdown
+        a.messages-link.dropdown-toggle(data-toggle='dropdown', href='#')
+          span.glyphicon.glyphicon-envelope
+          span.number 4
+          span.caret
+        ul.dropdown-menu
+          li
+            a(href='#') Page 1-1
+          li
+            a(href='#') Page 1-2
+          li
+            a(href='#') Page 1-3
+      li.dropdown
+        a.alerts-link.dropdown-toggle(data-toggle='dropdown', href='#')
+          span.glyphicon.glyphicon-bell
+          span.number 6
+          span.caret
+        ul.dropdown-menu
+          li
+            a(href='#') Page 1-1
+          li
+            a(href='#') Page 1-2
+          li
+            a(href='#') Page 1-3
+      li.dropdown
+        a.tasks-link.dropdown-toggle(data-toggle='dropdown', href='#')
+          span.glyphicon.glyphicon-th-list
+          span.number 11
+          span.caret
+        ul.dropdown-menu
+          li
+            a(href='#') Page 1-1
+          li
+            a(href='#') Page 1-2
+          li
+            a(href='#') Page 1-3
+      li.dropdown
+        a.user-link.dropdown-toggle(data-toggle='dropdown', href='#')
+          span.glyphicon.glyphicon-user
+          span.caret
+        ul.dropdown-menu
+          li
+            a(href='#') Page 1-1
+          li
+            a(href='#') Page 1-2
+          li
+            a(href='#') Page 1-3
+    
+      
+    
+      
+
