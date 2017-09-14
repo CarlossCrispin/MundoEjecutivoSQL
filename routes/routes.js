@@ -19,7 +19,7 @@ router.get('/users/showUser',AuthMiddleware.isLogged, controllers.userController
 router.get('/users/showUser',AuthMiddleware.isLogged, controllers.userController.getShowUser)
 router.get('/users/showTable',AuthMiddleware.isLogged, controllers.userController.getTable)
 router.get('/users/showGrafic1',AuthMiddleware.isLogged, controllers.userController.getGrafic1)
-
+router.get('/users/user',AuthMiddleware.isLogged, controllers.userController.getUser)
 
 
 module.exports = router;
