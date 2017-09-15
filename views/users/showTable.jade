@@ -2,7 +2,7 @@ extends ../templates/default
 include ../templates/nav
 block content
   container(class='container-responsive')
-    div(class='table-responsive')
+    div(class='table-responsive' )
         div(class='col-md-8 col-md-offset-0')
           h1(aling = "center")='Las 1000 Empresas más Importantes de México'
           table(class="table table-striped")
@@ -65,14 +65,17 @@ block content
                         td= item.pais
                         td= item.sector
                         
-                          
-        div(class="col-md-3 col-md-offset-2")
-          table(class="table table-striped")
-              thead()
-              tr
-                th        
-                    button(type="button" onclick="location.href='/users/panel'" name="boton" class="btn btn-primary")="Regresar"
-                th
-                    button(type="button" onclick="javascript:window.print()"  class="btn btn-primary")="Imprimir"
-                  
+        
+              
+                
+  br
+  br
 
+  container2
+    table(class="table table-striped")
+      thead()
+        tr
+          th        
+            button(type="button" onclick="location.href='/users/panel'" name="boton" class="btn btn-primary")="Regresar"
+          th
+            button(type="button" onclick="javascript:window.print()"  class="btn btn-primary" )="Imprimir"

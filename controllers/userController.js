@@ -95,8 +95,7 @@ module.exports = {
         res.render('users/showGrafic1', {
                    
             isAuthenticated: req.isAuthenticated(),
-            user: req.user,
-            item:demo
+            user: req.user
         });
     },
     getUser: function(req, res, next){
