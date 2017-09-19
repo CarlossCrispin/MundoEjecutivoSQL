@@ -1,73 +1,69 @@
 extends ../templates/default
 include ../templates/nav
 block content
-  container(class='container-responsive')
+  script(src='../javascripts/table.js')
+  div(class='col-md-8 col-md-offset-0')
+  h1(aling = "center")='Las 1000 Empresas más Importantes de México'
+  div(class='col-md-12 col-md-offset-0')
     div(class='table-responsive' )
-        div(class='col-md-8 col-md-offset-0')
-          h1(aling = "center")='Las 1000 Empresas más Importantes de México'
-          table(class="table table-striped")
-            thead(bgcolor="darkcyan")
-                tr
-                    td id
-                    td rank_
-                      |2014
-                    td rank_
-                      |2016
-                    td var
-                      |_pos
-                      |_14_15
-                    td rank_sector_15
-                    td rank_empleo_15
-                    td rank_rentabilidad_15
-                    td nom_empresa
-                    td info_financiera
-                    td var__por_ingresos_14_15
-                    td uti_neta_14
-                    td uti_neta_15
-                    td uti_opera_15
-                    td var_por_14_15_1
-                    td activo_total_15
-                    td var_por_14_15_2
-                    td pasivo_total
-                    td var_por_14_15
-                    td margen_ventas
-                    td roa
-                    td roe
-                    td liquidez
-                    td pais
-                    td sector
-                    
-            tbody(bgcolor="cyan" )
-                each item, i in items
-                    tr
-                        td= item.id
-                        td= item.rank_2015
-                        td= item.rank_2016
-                        td= item.var_pos_14_15
-                        td= item.rank_sector_15
-                        td= item.rank_empleo_15
-                        td= item.rank_rentabilidad_15
-                        td= item.nom_empresa
-                        td= item.info_financiera
-                        td= item.var__por_ingresos_14_15
-                        td= item.uti_neta_14
-                        td= item.uti_neta_15
-                        td= item.uti_opera_15
-                        td= item.var_por_14_15_1
-                        td= item.activo_total_15
-                        td= item.var_por_14_15_2
-                        td= item.pasivo_total
-                        td= item.var_por_14_15
-                        td= item.margen_ventas
-                        td= item.roa
-                        td= item.roe
-                        td= item.liquidez
-                        td= item.pais
-                        td= item.sector
-                        
-        
-              
-                
+      table#local.table.table-striped
+        thead(bgcolor="#34495E" )
+          
+          tr
+              td rank_
+                |2014
+              td rank_
+                |2016
+              td var
+                |_pos
+                |_14_15
+              td rank_sector_15
+              td rank_empleo_15
+              td rank_rentabilidad_15
+              td nom_empresa
+              td info_financiera
+              td var__por_ingresos_14_15
+              td uti_neta_14
+              td uti_neta_15
+              td uti_opera_15
+              td var_por_14_15_1
+              td activo_total_15
+              td var_por_14_15_2
+              td pasivo_total
+              td var_por_14_15
+              td margen_ventas
+              td roa
+              td roe
+              td liquidez
+              td pais
+              td sector
+        tbody(bgcolor="#8D9EAF" )
+          each item, i in items
+              tr
+                  
+                  td= item.rank_2015
+                  td= item.rank_2016
+                  td= item.var_pos_14_15
+                  td= item.rank_sector_15
+                  td= item.rank_empleo_15
+                  td= item.rank_rentabilidad_15
+                  td= item.nom_empresa
+                  td= item.info_financiera
+                  td= item.var__por_ingresos_14_15
+                  td= item.uti_neta_14
+                  td= item.uti_neta_15
+                  td= item.uti_opera_15
+                  td= item.var_por_14_15_1
+                  td= item.activo_total_15
+                  td= item.var_por_14_15_2
+                  td= item.pasivo_total
+                  td= item.var_por_14_15
+                  td= item.margen_ventas
+                  td= item.roa
+                  td= item.roe
+                  td= item.liquidez
+                  td= item.pais
+                  td= item.sector
   br
   br
 
@@ -76,6 +72,6 @@ block content
       thead()
         tr
           th        
-            button(type="button" onclick="location.href='/users/panel'" name="boton" class="btn btn-primary")="Regresar"
+            button(type="button" onclick="location.href='/users/panel'" name="boton" class="btn btn-default")="Regresar"
           th
-            button(type="button" onclick="javascript:window.print()"  class="btn btn-primary" )="Imprimir"
+            button(type="button" onclick="javascript:window.print()"  class="btn btn-default" )="Imprimir"

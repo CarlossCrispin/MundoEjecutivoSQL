@@ -11,7 +11,7 @@ require('./passport/passport')(passport);
 var multer = require('multer');
 
 var index = require('./routes/routes');
-var Vue = require('vue');
+
 
 var app = express();
 

@@ -1,7 +1,7 @@
 
 var mysql = require('mysql');
 var bcrypt = require('bcryptjs');
-var Vue = require('vue');
+
 
 module.exports = {
 
@@ -71,6 +71,8 @@ module.exports = {
         })
     },
     getTable: function(req, res, next){
+       
+        
         
        //pasamos la configuracion de la base de datos
        var config = require('.././database/config');
