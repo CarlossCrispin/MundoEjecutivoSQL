@@ -38,10 +38,7 @@ nav#top-nav.navbar.navbar-inverse.top-navbar
                               span.glyphicon.glyphicon-eye-open
                               |  Password
                               input#psw.form-control(required type='password' name='password' placeholder='Password' )
-                          .checkbox
-                              label
-                              input(type='checkbox', value='', checked='')
-                              | Remember me
+
                           button.btn.btn-success.btn-block(type='submit')
                               span.glyphicon.glyphicon-off
                               |  Registrarme
@@ -49,19 +46,13 @@ nav#top-nav.navbar.navbar-inverse.top-navbar
                       button.btn.btn-danger.btn-default.pull-left(type='submit', data-dismiss='modal')
                           span.glyphicon.glyphicon-remove
                           |  Cancel
-                      p
-                      | Not a member? 
-                      a(href='#') Sign Up
-                      p
-                      | Forgot 
-                      a(href='#') Password?
+                     
           script.
               $(document).ready(function(){
               $("#myBtn").click(function(){
               $("#myModal").modal();
               });
               });
-          //C:\Users\Carlos\Documents\9no\proyecto\MundoEjecutivo-master\views\users\signup.jade
 
         li
           button#myBtn1.btn.btn-link.btn-primary(type='button') Iniciar Sesión
@@ -87,7 +78,7 @@ nav#top-nav.navbar.navbar-inverse.top-navbar
                               span.glyphicon.glyphicon-eye-open
                               |  Password
                               input#psw.form-control(required type='password' name='password' placeholder='Password' )
-                          .checkbox
+                          //.checkbox
                               label
                               input(type='checkbox', value='', checked='')
                               | Remember me
@@ -98,12 +89,6 @@ nav#top-nav.navbar.navbar-inverse.top-navbar
                       button.btn.btn-danger.btn-default.pull-left(type='submit', data-dismiss='modal')
                           span.glyphicon.glyphicon-remove
                           |  Cancel
-                      p
-                      | Not a member? 
-                      a(href='#') Sign Up
-                      p
-                      | Forgot 
-                      a(href='#') Password?
           script.
               $(document).ready(function(){
               $("#myBtn1").click(function(){

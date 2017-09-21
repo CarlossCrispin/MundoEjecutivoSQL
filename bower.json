@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "dynatable": "^0.3.1"
+    "dynatable": "^0.3.1",
+    "tabulator": "^3.2.2"
   }
 }

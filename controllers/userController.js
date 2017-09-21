@@ -81,14 +81,18 @@ module.exports = {
        console.log(`> BD: ${db}`);
        db.connect();
        db.query('select * from ranking_2016',function(err,rows,fields){
-           if(err) throw err;
-
-           db.end();
-           res.render('users/showTable', {
-               isAuthenticated: req.isAuthenticated(),
-               user: req.user,
-               items: rows
-           });
+            if(err) throw err;
+            db.query('DESCRIBE `ranking_2016`',function(err,rows2,fields){
+                if(err) throw err;
+            db.end();
+            res.render('users/showTable', {
+                isAuthenticated: req.isAuthenticated(),
+                user: req.user,
+                items: rows,
+                items2: rows2
+            });
+           }) 
+           
        })
     },
     getGrafic1: function(req, res, next){

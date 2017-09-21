@@ -1,71 +1,78 @@
 extends ../templates/default
 include ../templates/nav
 block content
-  script(src='../javascripts/table.js')
-  div(class='col-md-8 col-md-offset-0')
-  h1(aling = "center")='Las 1000 Empresas más Importantes de México'
+  script(src='../javascripts/table.js') 
+  div(class='col-md-8 col-md-offset-3')
+    h1(aling = "center")='Las 1000 Empresas más Importantes de México' 
   div(class='col-md-12 col-md-offset-0')
-    div(class='table-responsive' )
-      table#local.table.table-striped
-        thead(bgcolor="#34495E" )
-          
+    div(class='table-responsive' )  
+      table#local.table.table-striped 
+        thead
+          //th(COLSPAN=7) Información de los Ranking
+          //th(ROWSPAN=1) Empresa
+          //th(COLSPAN=10 ) Información Financiera (en millones de dólares)
+          //th(COLSPAN=4 ) Razones Financieras 2015
+          //th(COLSPAN=2 ) Datos Adicionales
           tr
-              td rank_
-                |2014
-              td rank_
-                |2016
-              td var
-                |_pos
-                |_14_15
-              td rank_sector_15
-              td rank_empleo_15
-              td rank_rentabilidad_15
-              td nom_empresa
-              td info_financiera
-              td var__por_ingresos_14_15
-              td uti_neta_14
-              td uti_neta_15
-              td uti_opera_15
-              td var_por_14_15_1
-              td activo_total_15
-              td var_por_14_15_2
-              td pasivo_total
-              td var_por_14_15
-              td margen_ventas
-              td roa
-              td roe
-              td liquidez
-              td pais
-              td sector
-        tbody(bgcolor="#8D9EAF" )
+            th ID
+            th Rank 2014
+            th Rank 2015
+            th Var.Pos 2014/2015
+            th Rank Sector 2015
+            th Rank Empleo 2015
+            th Rank Rentabilidad 2015
+            th Empresa
+            th 2015 (mdd)
+            th Var. % Ingresos 2014/2015
+            th Utilidad Neta 2014
+            th Utilidad Neta 2015
+            th Utilidad Operación 2015
+            th Var. % 2014/2015 
+            th Activo Total 2015
+            th Var. % 2014/2015 
+            th Pasivo Total 2015
+            th Var. % 2014/2015 
+            th Margen Operativo de Ventas
+            th ROA
+            th ROE
+            th Liquidez
+            th País
+            th Sector
+        //each item, i in items2
+          th=item.Field
+        tbody
+          each item, i in items2
+            td
           each item, i in items
-              tr
-                  
-                  td= item.rank_2015
-                  td= item.rank_2016
-                  td= item.var_pos_14_15
-                  td= item.rank_sector_15
-                  td= item.rank_empleo_15
-                  td= item.rank_rentabilidad_15
-                  td= item.nom_empresa
-                  td= item.info_financiera
-                  td= item.var__por_ingresos_14_15
-                  td= item.uti_neta_14
-                  td= item.uti_neta_15
-                  td= item.uti_opera_15
-                  td= item.var_por_14_15_1
-                  td= item.activo_total_15
-                  td= item.var_por_14_15_2
-                  td= item.pasivo_total
-                  td= item.var_por_14_15
-                  td= item.margen_ventas
-                  td= item.roa
-                  td= item.roe
-                  td= item.liquidez
-                  td= item.pais
-                  td= item.sector
+            tr
+              td= item.id
+              td= item.rank_2015
+              td= item.rank_2016
+              td= item.var_pos_14_15
+              td= item.rank_sector_15
+              td= item.rank_empleo_15
+              td= item.rank_rentabilidad_15
+              td= item.nom_empresa
+              td= item.info_financiera
+              td= item.var__por_ingresos_14_15 
+              td= item.uti_neta_14
+              td= item.uti_neta_15
+              td= item.uti_opera_15
+              td= item.var_por_14_15_1
+              td= item.activo_total_15
+              td= item.var_por_14_15_2
+              td= item.pasivo_total
+              td= item.var_por_14_15
+              td= item.margen_ventas
+              td= item.roa
+              td= item.roe
+              td= item.liquidez
+              td= item.pais
+              td= item.sector
+      
   br
   br
+
 
   container2
     table(class="table table-striped")
@@ -75,3 +82,5 @@ block content
             button(type="button" onclick="location.href='/users/panel'" name="boton" class="btn btn-default")="Regresar"
           th
             button(type="button" onclick="javascript:window.print()"  class="btn btn-default" )="Imprimir"
+          th
+            button(type="button" onclick="script(src='../javascripts/excel.js') "  class="btn btn-default" )="Excel"
