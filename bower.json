@@ -11,12 +11,11 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "public/vendor",
     "test",
     "tests"
   ],
   "dependencies": {
     "dynatable": "^0.3.1",
-    "tabulator": "^3.2.2"
+    "bootstrap-sweetalert": "^1.0.1"
   }
 }

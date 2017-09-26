@@ -2,12 +2,13 @@ extends ../templates/default
 include ../templates/nav
 block content
   script(src='../javascripts/table.js') 
+  script(src='../javascripts/excel.js')
   div(class='col-md-8 col-md-offset-3')
     h1(aling = "center")='Las 1000 Empresas más Importantes de México' 
   div(class='col-md-12 col-md-offset-0')
     div(class='table-responsive' )  
       table#local.table.table-striped 
-        thead
+        thead(bgcolor="#34495E")
           //th(COLSPAN=7) Información de los Ranking
           //th(ROWSPAN=1) Empresa
           //th(COLSPAN=10 ) Información Financiera (en millones de dólares)
@@ -40,7 +41,7 @@ block content
             th Sector
         //each item, i in items2
           th=item.Field
-        tbody
+        tbody(bgcolor="#8D9EAF")
           each item, i in items2
             td
           each item, i in items
@@ -83,4 +84,7 @@ block content
           th
             button(type="button" onclick="javascript:window.print()"  class="btn btn-default" )="Imprimir"
           th
-            button(type="button" onclick="script(src='../javascripts/excel.js') "  class="btn btn-default" )="Excel"
+            button(type="button" onclick="tableToExcel('local', 'Mundo Ejecutivo')"  class="btn btn-default")="Exportar a Excel"
+ 
+
+ 
