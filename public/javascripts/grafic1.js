@@ -1,65 +1,130 @@
-Vue.use(VueHighcharts);
-
-var options = {
-  title: {
-    text: 'Empresas Generadoras de Empleo',
-    x: -20 //center
-  },
-  subtitle: {
-    text: 'Source: Mundo Ejecutivo on.line',
-    x: -20
-  },
-  xAxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-    ]
-  },
-  yAxis: {
-    title: {
-      text: 'Rank % de Empleos '
+/*$(document).ready( function() {
+  var chart = AmCharts.makeChart("chartdiv", {
+    "theme": "chalk",
+    "type": "serial",
+    "dataProvider": [{
+        "country": "USA",
+        "year2004": 3.5,
+        "year2005": 4.2
+    }, {
+        "country": "UK",
+        "year2004": 1.7,
+        "year2005": 3.1
+    }, {
+        "country": "Canada",
+        "year2004": 2.8,
+        "year2005": 2.9
+    }, {
+        "country": "Japan",
+        "year2004": 2.6,
+        "year2005": 2.3
+    }, {
+        "country": "France",
+        "year2004": 1.4,
+        "year2005": 2.1
+    }, {
+        "country": "Brazil",
+        "year2004": 2.6,
+        "year2005": 4.9
+    }, {
+        "country": "Russia",
+        "year2004": 6.4,
+        "year2005": 7.2
+    }, {
+        "country": "India",
+        "year2004": 8,
+        "year2005": 7.1
+    }, {
+        "country": "China",
+        "year2004": 9.9,
+        "year2005": 10.1
+    }],
+    "valueAxes": [{
+        "stackType": "3d",
+        "unit": "%",
+        "position": "left",
+        "title": "Mundo",
+    }],
+    "startDuration": 1,
+    "graphs": [{
+        "balloonText": "GDP grow in [[category]] (2004): <b>[[value]]</b>",
+        "fillAlphas": 0.9,
+        "lineAlpha": 0.2,
+        "title": "2004",
+        "type": "column",
+        "valueField": "year2004"
+    }, {
+        "balloonText": "fdhg [[category]] (2005): <b>[[value]]</b>",
+        "fillAlphas": 0.9,
+        "lineAlpha": 0.2,
+        "title": "2005",
+        "type": "column",
+        "valueField": "year2005"
+    }],
+    "plotAreaFillAlphas": 0.1,
+    "depth3D": 60,
+    "angle": 30,
+    "categoryField": "country",
+    "categoryAxis": {
+        "gridPosition": "start"
     },
-    plotLines: [{
-      value: 0,
-      width: 1,
-      color: '#808080'
-    }]
-  },
-  tooltip: {
-    valueSuffix: '$'
-  },
-  legend: {
-    layout: 'vertical',
-    align: 'right',
-    verticalAlign: 'middle',
-    borderWidth: 0
-  },
-  series: [{
-    name: 'ISSSTE',
-    data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-  }, {
-    name: 'Petróleos Mexicanos',
-    data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
-  }, {
-    name: 'Coca-Cola FEMSA',
-    data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
-  }, {
-    name: 'Grupo Carso',
-    data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-  }]
-};
-
-var vm = new Vue({
-  el: '#app',
-  data: {
-    options: options
-  },
-  methods: {
-  	updateCredits: function() {
-      chart.credits.update({
-        style: {
-          color: '#' + (Math.random() * 0xffffff | 0).toString(16)
+    "export": {
+      "enabled": true
+     }
+  });
+  jQuery('.chart-input').off().on('input change',function() {
+  var property	= jQuery(this).data('property');
+  var target		= chart;
+  chart.startDuration = 0;
+  
+  if ( property == 'topRadius') {
+    target = chart.graphs[0];
+        if ( this.value == 0 ) {
+          this.value = undefined;
         }
-      });
-    }
   }
+  
+  target[property] = this.value;
+  chart.validateNow();
+  });
+});
+//////////////////////////////////////////////////////
+$(document).ready( function() {
+    $(function () {
+        Highcharts.chart('container', {
+            data: {
+                table: 'datatable'
+            },
+            title: {
+                text: 'Ranking 2017'
+            }
+        });
+    });
+});*/
+$(document).ready( function() {
+    $(function () {
+        Highcharts.chart('container', {
+            data: {
+                table: 'datatable'
+            },
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Ranking'
+            },
+            yAxis: {
+                allowDecimals: false,
+                title: {
+                    text: 'Units'
+                }
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + '</b><br/>' +
+                        this.point.y + ' ' + this.point.name.toLowerCase();
+                }
+            }
+        });
+    });
 });

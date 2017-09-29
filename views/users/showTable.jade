@@ -1,8 +1,7 @@
 extends ../templates/default
 include ../templates/nav
 block content
-  script(src='../javascripts/table.js') 
-  script(src='../javascripts/excel.js')
+  
   div(class='col-md-8 col-md-offset-3')
     h1(aling = "center")='Las 1000 Empresas más Importantes de México' 
   div(class='col-md-12 col-md-offset-0')
@@ -15,14 +14,14 @@ block content
           //th(COLSPAN=4 ) Razones Financieras 2015
           //th(COLSPAN=2 ) Datos Adicionales
           tr
-            th ID
+
             th Rank 2014
             th Rank 2015
             th Var.Pos 2014/2015
             th Rank Sector 2015
             th Rank Empleo 2015
             th Rank Rentabilidad 2015
-            th Empresa
+            th Nombre Empresa
             th 2015 (mdd)
             th Var. % Ingresos 2014/2015
             th Utilidad Neta 2014
@@ -39,37 +38,36 @@ block content
             th Liquidez
             th País
             th Sector
-        //each item, i in items2
-          th=item.Field
+          //each item, i in items2
+            th=item.Field
         tbody(bgcolor="#8D9EAF")
           each item, i in items2
             td
           each item, i in items
             tr
-              td= item.id
-              td= item.rank_2015
-              td= item.rank_2016
-              td= item.var_pos_14_15
-              td= item.rank_sector_15
-              td= item.rank_empleo_15
-              td= item.rank_rentabilidad_15
-              td= item.nom_empresa
-              td= item.info_financiera
-              td= item.var__por_ingresos_14_15 
-              td= item.uti_neta_14
-              td= item.uti_neta_15
-              td= item.uti_opera_15
-              td= item.var_por_14_15_1
-              td= item.activo_total_15
-              td= item.var_por_14_15_2
-              td= item.pasivo_total
-              td= item.var_por_14_15
-              td= item.margen_ventas
-              td= item.roa
-              td= item.roe
-              td= item.liquidez
-              td= item.pais
-              td= item.sector
+              td= item.Rank_1000_2015
+              td= item.Rank_1000_2014
+              td= item.Var_Pos_2014_2015
+              td= item.Rank_Sector_2015
+              td= item.Rank_Empleo_2015
+              td= item.Rank_Rentabilidad
+              td= item.Empresa
+              td= item.Información_Financiera_2015_mdd
+              td= item.Var_Porcentaje_Ingresos_2014_2015
+              td= item.Utilidad_Neta_2015
+              td= item.Utilidad_Neta_2014
+              td= item.Utilidad_Operación_2015
+              td= item.Var_Porcentaje_2014_2015
+              td= item.Activo_Total_2015
+              td= item.Var1_Porcentaje_2014_2015
+              td= item.Pasivo_Total
+              td= item.Var3_Porcentaje_2014_2015
+              td= item.Margen_Operativo_de_Ventas
+              td= item.ROA
+              td= item.ROE
+              td= item.Liquidez
+              td= item.País
+              td= item.Sector
       
   br
   br
@@ -87,4 +85,5 @@ block content
             button(type="button" onclick="tableToExcel('local', 'Mundo Ejecutivo')"  class="btn btn-default")="Exportar a Excel"
  
 
- 
+    script(src='../javascripts/table.js') 
+    script(src='../javascripts/excel.js')

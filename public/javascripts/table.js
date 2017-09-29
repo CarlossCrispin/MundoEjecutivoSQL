@@ -2,7 +2,7 @@
 $(document).ready( function() {
 	$('#local').dynatable({
 		table: {
-		  defaultColumnIdStyle: 'trimDash'
+		  defaultColumnIdStyle: 'lowercase'
 		},
 		features: {
 		  paginate: true,
