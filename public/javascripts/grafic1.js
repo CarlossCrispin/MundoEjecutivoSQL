@@ -87,7 +87,7 @@
   target[property] = this.value;
   chart.validateNow();
   });
-});
+});*/
 //////////////////////////////////////////////////////
 $(document).ready( function() {
     $(function () {
@@ -97,11 +97,21 @@ $(document).ready( function() {
             },
             title: {
                 text: 'Ranking 2017'
-            }
+            },
+            yAxis: [{ 
+                title: {
+                    text: 'Valores'
+                }
+            }, { //--- Secondary yAxis
+                title: {
+                    text: ''
+                },
+                opposite: true
+            }]
         });
     });
-});*/
-$(document).ready( function() {
+});
+/*$(document).ready( function() {
     $(function () {
         Highcharts.chart('container', {
             data: {
@@ -127,4 +137,4 @@ $(document).ready( function() {
             }
         });
     });
-});
+});*/

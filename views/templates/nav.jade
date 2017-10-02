@@ -1,172 +1,61 @@
 link(rel='stylesheet', href='/stylesheets/nav.css')
 link(rel='stylesheet', href='/stylesheets/modal.css')
-script(src='https://use.fontawesome.com/07b0ce5d10.js')
-nav#top-nav.navbar.navbar-inverse.top-navbar
-  .container-fluid
-    .navbar-header
-      a.navbar-brand(rel='Inicio', href='/', title='Mundo Ejecutivo')
-        img.img-responsive(src="../images/me1.png", width='150', height='20')    
-    
-    ul.social-icon.pull-right.list-inline
-      if !isAuthenticated
-        li
-          button#myBtn.btn.btn-link.btn-primary(type='button') Registrarse
-          #myModal.modal.fade(role='dialog')
-            .modal-dialog
-              // Modal content
-              .modal-content
-                  .modal-header(style='padding:35px 50px;')
-                      button.close(type='button', data-dismiss='modal') ×
-                      h4
-                      span.glyphicon.glyphicon-lock
-                      |  Registrarme
-                  .modal-body(style='padding:40px 50px;')
-                      form(action='/auth/signup' method='post' autocomplete='off')
-                              
-                          .form-group
-                              label(for='email')
-                                  span.glyphicon.glyphicon-envelope
-                                  |  Email
-                              input#usrname.form-control(required type='email' name='email' placeholder='Email')
-                          .form-group
-                              label(for='nombre')
-                              span.glyphicon.glyphicon-user
-                              |  Nombre
-                              input#psw.form-control(required type='text' name='nombre' placeholder='Nombre' )
-                          .form-group
-                              label(for='password')
-                              span.glyphicon.glyphicon-eye-open
-                              |  Password
-                              input#psw.form-control(required type='password' name='password' placeholder='Password' )
 
-                          button.btn.btn-success.btn-block(type='submit')
-                              span.glyphicon.glyphicon-off
-                              |  Registrarme
-                  .modal-footer
-                      button.btn.btn-danger.btn-default.pull-left(type='submit', data-dismiss='modal')
-                          span.glyphicon.glyphicon-remove
-                          |  Cancel
-                     
-          script.
-              $(document).ready(function(){
-              $("#myBtn").click(function(){
-              $("#myModal").modal();
-              });
-              });
+header#mainHeading
+  .container
+    .row
+      .col-xs-12.flex
+        nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+          .container
+            // Brand and toggle get grouped for better mobile display
+            .navbar-header.page-scroll
+              button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+              a.page-scroll(href='/')
+                img.img-responsive(src="../images/me1.png", width='150', height='20')
+            // Collect the nav links, forms, and other content for toggling
+            #bs-example-navbar-collapse-1.collapse.navbar-collapse
+              ul.nav.navbar-nav.navbar-right
+                li.hidden
+                  a.page-scroll(href='#page-top')    
+                li  
+                  a.page-scroll.i.fa.fa-home(href='/')=" Inicio"
+                    
+                if !isAuthenticated
+                  li
+                    a.page-scroll.button#myBtn.btn-link Registrarse
+                  li
+                    a.page-scroll.button#myBtn1.btn-link  Iniciar Sesión
+                if isAuthenticated
+                  li
+                    a.page-scroll(href='#portfolio')='Bienvenido..' +user.nombre  
+                  li
+                    a.page-scroll(href='/users/panel') Perfil
+                  li
+                    a.page-scroll(href='/auth/logout') salir
+            // /.navbar-collapse
+          // /.container-fluid
+        #banner
+          .row
+            .col-md-8.col-md-offset-2
+              .headings
+                .header-content-inner
+                  h2 las 1000 Empresas más Importantes de México
+                  hr
+                  h3
+                    | La cumbre de negocios más importantes de México fue organizada por Grupo Editorial Mundo Ejecutivo con las 1000 EMPRESAS MÁS IMPORTANTES DE MÉXICO 2016.
+                    a.scroll.page-scroll(href='#about',style='color:#fff') desplazarse hacia abajo! ▼
+                  
+  include menu
+  section#services
+  include ../users/signup
+  section#services1
+  include ../users/signin
 
-        li
-          button#myBtn1.btn.btn-link.btn-primary(type='button') Iniciar Sesión
-          #myModal1.modal.fade(role='dialog')
-            .modal-dialog
-                // Modal content
-                .modal-content
-                    .modal-header(style='padding:35px 50px;')
-                        button.close(type='button', data-dismiss='modal') ×
-                        h4
-                        span.glyphicon.glyphicon-lock
-                        |  Iniciar Sesión
-                    .modal-body(style='padding:40px 50px;')
-                        form(action='/auth/signin' method='post' autocomplete='off')
-                                
-                          .form-group
-                              label(for='email')
-                                  span.glyphicon.glyphicon-envelope
-                                  |  Email
-                              input#psw.form-control(formnovalidate="formnovalidate" type='email' name='username' placeholder='Email' autofocus )
-                          .form-group
-                              label(for='password')
-                              span.glyphicon.glyphicon-eye-open
-                              |  Password
-                              input#psw.form-control(required type='password' name='password' placeholder='Password' )
-                          //.checkbox
-                              label
-                              input(type='checkbox', value='', checked='')
-                              | Remember me
-                          button.btn.btn-success.btn-block(type='submit')
-                              span.glyphicon.glyphicon-off
-                              |  Iniciar Sesión
-                    .modal-footer
-                      button.btn.btn-danger.btn-default.pull-left(type='submit', data-dismiss='modal')
-                          span.glyphicon.glyphicon-remove
-                          |  Cancel
-          script.
-              $(document).ready(function(){
-              $("#myBtn1").click(function(){
-              $("#myModal1").modal();
-              });
-              });
-      if isAuthenticated
-        //p( style='font-size:18px;color:#fff')='Bienvenido..'
-        d(class="dropdown")
-          a(href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-          aria-haspopup="true" aria-expanded="false" class="" style='font-size:28px;color:#fff')='Bienvenido..  '+user.nombre
-            span(class="caret")
-            li(class="dropdown-menu")
-              a(href="/users/panel" )
-                i.fa.fa-user(style='font-size:18px;color:#2C3E50')=' Perfil '
-              a(href="/auth/logout")
-                i.fa.fa-user-times(style='font-size:18px;color:#2C3E50')=' Salir'    
-     ul.social-icon.pull-right.list-inline
-      form.navbar-form.navbar
-        .input-group
-          input.form-control(type='text', placeholder='Search')
-          .input-group-btn
-            button.btn.btn-default(type='submit')
-              i.glyphicon.glyphicon-search
-    ul.social-icon.pull-right.list-inline
-      li.dropdown
-        a.messages-link.dropdown-toggle(data-toggle='dropdown', href='#')
-          span.glyphicon.glyphicon-envelope
-          span.number 4
-          span.caret
-        ul.dropdown-menu
-          li
-            a(href='#') Page 1-1
-          li
-            a(href='#') Page 1-2
-          li
-            a(href='#') Page 1-3
-      li.dropdown
-        a.alerts-link.dropdown-toggle(data-toggle='dropdown', href='#')
-          span.glyphicon.glyphicon-bell
-          span.number 6
-          span.caret
-        ul.dropdown-menu
-          li
-            a(href='#') Page 1-1
-          li
-            a(href='#') Page 1-2
-          li
-            a(href='#') Page 1-3
-      li.dropdown
-        a.tasks-link.dropdown-toggle(data-toggle='dropdown', href='#')
-          span.glyphicon.glyphicon-th-list
-          span.number 11
-          span.caret
-        ul.dropdown-menu
-          li
-            a(href='#') Page 1-1
-          li
-            a(href='#') Page 1-2
-          li
-            a(href='#') Page 1-3
-      li.dropdown
-        a.user-link.dropdown-toggle(data-toggle='dropdown', href='#')
-          span.glyphicon.glyphicon-user
-          span.caret
-        ul.dropdown-menu
-          li
-            a(href='#') Page 1-1
-          li
-            a(href='#') Page 1-2
-          li
-            a(href='#') Page 1-3
-    ul.social-icon.pull-right.list-inline
-      a.navbar-brand(rel='Inicio', href='/', title='Mundo Ejecutivo',style='font-size:18px;color:#fff')
-      a.i.fa.fa-home(class="navbar-brand" href="/",style='font-size:18px;color:#fff')= ' Inicio'
-        
+            
+script(src='../javascripts/nav.js')
 
-      
-    
-      
 

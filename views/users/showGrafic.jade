@@ -1,0 +1,41 @@
+extends ../templates/default
+
+block content 
+    div(class='col-md-10 col-md-offset-4')  
+        h1 Gráfica Sector Automotriz
+
+    script(src='../javascripts/grafic.js')
+    #container
+    div(class='col-md-10 col-md-offset-3') 
+        br
+        h1 DATOS MOSTRADOS EN EL GRÁFICO
+    div(class='col-md-10 col-md-offset-1') 
+        table#datatable.table-bordered
+            thead
+                
+                th
+                th Rank 2015
+                th Rank 2014
+                th Var.Pos 2014/2015
+                
+            tbody
+                each item, i in items
+                    tr
+                        th= item.Empresa
+                        td(style="text-align:center;")=item.Rank_1000_2015
+                        td(style="text-align:center;")=item.Rank_1000_2014
+                        td(style="text-align:center;")= item.Var_Pos_2014_2015
+            
+    
+    br
+    br
+    
+     
+
+    container2
+        table(class="table table-striped")
+            thead()
+                tr
+                    th        
+                        button(type="button" onclick="location.href='/users/panel'" name="boton" class="btn btn-default")="Regresar"
+               

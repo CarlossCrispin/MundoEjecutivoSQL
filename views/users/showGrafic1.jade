@@ -1,7 +1,9 @@
 extends ../templates/default
 
-block content  
-    h1 Gráfica 1
+block content
+    section#about
+    div(class='col-md-10 col-md-offset-4')  
+        h1 Gráfica Sector Comercio
     
     //link(rel='stylesheet', href='/stylesheets/grafic1.css')
     //link(rel='stylesheet', href='https://www.amcharts.com/lib/3/plugins/export/export.css', type='text/css', media='all')
@@ -17,32 +19,32 @@ block content
 
     script(src='../javascripts/grafic1.js')
     #container
-    br
-    table#datatable.table-bordered
-        thead
-            th
-            th Rank 2015
-            th Rank 2014
-            th Var.Pos 2014/2015
-            
-        tbody
-            each item, i in items
-                tr
+    div(class='col-md-10 col-md-offset-3') 
+        br
+        h1 DATOS MOSTRADOS EN EL GRÁFICO
+    div(class='col-md-10 col-md-offset-1') 
+        table#datatable.table-bordered
+            thead
+                
+                th
+                each item, i in items
                     th= item.Empresa
-                    td=item.Rank_1000_2015
-                    td=item.Rank_1000_2014
-                    td= item.Var_Pos_2014_2015
-        
+                        
+                        
+                        
+                
+            tbody
+                
+                    tr
+                        th Rank 2015
+                        each item, i in items
+                            td(style="text-align:center;")=item.Rank_1000_2014
+                    tr
+                        th Rank 2014  
+                        each item, i in items
+                            td(style="text-align:center;")=item.Rank_1000_2015
             
-  
-
-
-
-
-
-
-
-   
+    
     br
     br
     

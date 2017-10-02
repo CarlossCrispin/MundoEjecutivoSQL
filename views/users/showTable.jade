@@ -1,7 +1,7 @@
 extends ../templates/default
 include ../templates/nav
 block content
-  
+  section#about
   div(class='col-md-8 col-md-offset-3')
     h1(aling = "center")='Las 1000 Empresas más Importantes de México' 
   div(class='col-md-12 col-md-offset-0')
@@ -83,7 +83,7 @@ block content
             button(type="button" onclick="javascript:window.print()"  class="btn btn-default" )="Imprimir"
           th
             button(type="button" onclick="tableToExcel('local', 'Mundo Ejecutivo')"  class="btn btn-default")="Exportar a Excel"
- 
+
 
     script(src='../javascripts/table.js') 
     script(src='../javascripts/excel.js')

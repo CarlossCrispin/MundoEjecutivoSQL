@@ -1,134 +1,11 @@
-
-a.sidebar-toggle(href='javascript:;' style='font-size:18px;color:#2C3E50')
-  i.fa.fa-caret-square-o-down='  Monstrar Panel'
-span#hide-btn.close-btn
-  i.fa.fa-times(aria-hidden='true')
-#user-profil.container-1
-  ul#side.nav.navbar-nav-1.side-nav
-    li.side-user
-      //img.img-circle(src=user.img)
-      img.img-circle(src="../images/per.jpg")
-      p.welcome
-        i.fa.fa-key(style='font-size:18px;color:#fff') 
-          |  Sesión de ...
-      p
-        a(href="/users/panel" class="" style='font-size:28px;color:#fff')= user.nombre +"  "
-          i.fa.fa-caret-square-o-up
-    li.nav-search
-      form.navbar-form
-        .input-group
-          input.form-control(type='text', placeholder='Search')
-          .input-group-btn
-            button.btn.btn-default(type='submit')
-              i.glyphicon.glyphicon-search
-    li.dashboard
-      a.active(href='/users/panel')
-        i.fa.fa-bars
-        |  Tablero
-    li.panel
-      a(href='javascript:;', data-toggle='collapse', data-target='#charts')
-        i.fa.fa-bar-chart
-        |  Gráficos 
-        i.fa.fa-caret-down.pull-right
-      ul#charts.collapse.nav
-        li
-          a(href='/users/showTable')
-          
-       
-            i.fa.fa-angle-double-right
-            |  Mostrar Tablas
-        li
-          a(href='#')
-            i.fa.fa-angle-double-right
-            |  Modificar Usuario
-        li
-          a(href='#')
-            i.fa.fa-angle-double-right
-            |  Eliminar Usuario
-    li.panel
-      a(href='javascript:;', data-toggle='collapse', data-target='#calendar')
-        i.fa.fa-calendar
-        |  calendar 
-        i.fa.fa-caret-down.pull-right
-      ul#calendar.collapse.nav
-        li
-          a(href='#')
-            i.fa.fa-angle-double-right
-            |  Datos de la empresa
-        li
-          a(href='#')
-            i.fa.fa-angle-double-right
-            |  graficas
-    li.panel
-      a(href='javascript:;', data-toggle='collapse', data-target='#clipboard')
-        i.fa.fa-clipboard
-        |  clipboard 
-        i.fa.fa-caret-down.pull-right
-      ul#clipboard.collapse.nav
-        li
-          a(href='#')
-            i.fa.fa-angle-double-right
-            |  Flot Charts
-        li
-          a(href='#')
-            i.fa.fa-angle-double-right
-            |  Morris.js
-    li.panel
-      a(href='javascript:;', data-toggle='collapse', data-target='#edit')
-        i.fa.fa-edit
-        |  edit 
-        i.fa.fa-caret-down.pull-right
-      ul#edit.collapse.nav
-        li
-          a(href='#')
-            i.fa.fa-angle-double-right
-            |  Flot Charts
-        li
-          a(href='#')
-            i.fa.fa-angle-double-right
-            |  Morris.js
-    li.panel
-      a(href='javascript:;', data-toggle='collapse', data-target='#inbox')
-        i.fa.fa-inbox
-        |  inbox 
-        i.fa.fa-caret-down.pull-right
-      ul#inbox.collapse.nav
-        li
-          a(href='#')
-            i.fa.fa-angle-double-right
-            |  Flot Charts
-        li
-          a(href='#')
-            i.fa.fa-angle-double-right
-            |  Morris.js
-    li.panel
-      a(href='javascript:;', data-toggle='collapse', data-target='#cogs')
-        i.fa.fa-cogs
-        |  cogs 
-        i.fa.fa-caret-down.pull-right
-      ul#cogs.collapse.nav
-        li
-          a(href='#')
-            i.fa.fa-angle-double-right
-            |  Flot Charts
-        li
-          a(href='#')
-            i.fa.fa-angle-double-right
-            |  Morris.js
-    li.panel
-      a(href='javascript:;', data-toggle='collapse', data-target='#paper')
-        i.fa.fa-paper-plane
-        |  paper 
-        i.fa.fa-caret-down.pull-right
-      ul#paper.collapse.nav
-        li
-          a(href='#')
-            i.fa.fa-angle-double-right
-            |  Flot Charts
-        li
-          a(href='#')
-            i.fa.fa-angle-double-right
-            |  Morris.js
+section#about
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        h2.title.text-center entro !
+        hr.light
+        p
+          | Frontend web developer and web designer specialized in
 .container-2
   #page-wrapper
     .row
@@ -154,12 +31,12 @@ span#hide-btn.close-btn
               i.fa.fa-bars.fa-fw.fa-3x
           .circle-tile-content.dark-blue
             .circle-tile-description.text-faded
-              | Tablas
+              | Ranking
             .circle-tile-number.text-faded
-              | Tablas
+              | 2016
               span#sparklineA
             a.circle-tile-footer(href='#')
-              | las 100 Empresas de méxico 
+              | las 1000 Empresas de méxico 
               i.fa.fa-chevron-circle-right
       .col-lg-2.col-sm-6
         .circle-tile
@@ -168,24 +45,24 @@ span#hide-btn.close-btn
               i.fa.fa-bar-chart-o.fa-fw.fa-3x
           .circle-tile-content.green
             .circle-tile-description.text-faded
-              | Top 10
+              | Sector
             .circle-tile-number.text-faded
-              | Empleo
+              | Comercio
             a.circle-tile-footer(href='#')
-              | Empresas que generan empleo 
+              | Gráfico 
               i.fa.fa-chevron-circle-right
       .col-lg-2.col-sm-6
         .circle-tile
-          a(href='#')
+          a(href='/users/showGrafic')
             .circle-tile-heading.orange
-              i.fa.fa-bell.fa-fw.fa-3x
+              i.fa.fa-bar-chart-o.fa-fw.fa-3x
           .circle-tile-content.orange
             .circle-tile-description.text-faded
-              | Top 10
+              | Sector
             .circle-tile-number.text-faded
-              | Rentabilidad
+              | Automotriz
             a.circle-tile-footer(href='#')
-              | Empresas mas rentables 
+              | Gráfico 
               i.fa.fa-chevron-circle-right
       .col-lg-2.col-sm-6
         .circle-tile
@@ -194,12 +71,12 @@ span#hide-btn.close-btn
               i.fa.fa-tasks.fa-fw.fa-3x
           .circle-tile-content.blue
             .circle-tile-description.text-faded
-              | Tasks
+              | Top
             .circle-tile-number.text-faded
               | 10
               span#sparklineB
             a.circle-tile-footer(href='#')
-              | More Info 
+              | Rentabilidad 
               i.fa.fa-chevron-circle-right
       .col-lg-2.col-sm-6
         .circle-tile
@@ -229,33 +106,3 @@ span#hide-btn.close-btn
             a.circle-tile-footer(href='#')
               | More Info 
               i.fa.fa-chevron-circle-right
-    .row
-      .col-lg-3
-        .tile.tile-img.tile-time.morning(style='height: 200px')
-          p.time-widget
-            span.time-widget-heading It Is Currently
-            br
-            strong
-              span#datetime
-                | Friday
-                br
-                | March 17th, 2017
-                br
-                | 12:43:17 PM
-      .col-lg-9
-    script(type='text/javascript').
-      $(document).ready(function(){
-      $(".sidebar-toggle").click(function(){
-      $(this).hide();
-      $("#user-profil").show();
-      $("#hide-btn").show();
-      $(".container-2").css("width", "85%");
-      });
-      $("#hide-btn").click(function(){
-      $(this).hide();
-      $("#user-profil").hide();
-      $(".sidebar-toggle").show();
-      $(".container-2").css("width", "100%");
-      });
-      });
-      
