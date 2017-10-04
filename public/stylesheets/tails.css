@@ -1,11 +1,7 @@
 @media (min-width:768px){
   .container-2{width:100%;float: left;background-color: #CDC8C8}
   }
-  .container-2:before,
-  {
-    display: table;
-    content: " ";
-  }
+  
 
   
   @media (min-width: 768px){
@@ -13,13 +9,13 @@
   #page-wrapper {
      
       padding: 0 30px;
-      min-height: 350px;
+      min-height: 650px;
       border-left: 1px solid #2c3e50;
   }
   }
   
   #page-wrapper {
-      padding: 0 20px;
+      padding: 0 100px;
       border: none;   
   }
   
@@ -30,7 +26,7 @@
   font-size: 0;
   text-align: center;
   position: absolute;
-  top: 50%;
+  top: 90%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
