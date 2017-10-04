@@ -6,8 +6,7 @@
     display: table;
     content: " ";
   }
-  .container-2:after,
-  {clear: both;}
+
   
   @media (min-width: 768px){
   
