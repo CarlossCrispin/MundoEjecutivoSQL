@@ -1,15 +1,31 @@
-
-.panels{
-background: #b7c3a8;
-font-family: 'Varela Round', sans-serif;
-font-size: 10px;
-font-weight: 400;
-padding: 15px;
-
-}
-
+@media (min-width:768px){
+  .container-2{width:100%;float: left;background-color: #CDC8C8}
+  }
+  .container-2:before,
+  {
+    display: table;
+    content: " ";
+  }
+  .container-2:after,
+  {clear: both;}
+  
+  @media (min-width: 768px){
+  
+  #page-wrapper {
+     
+      padding: 0 30px;
+      min-height: 350px;
+      border-left: 1px solid #2c3e50;
+  }
+  }
+  
+  #page-wrapper {
+      padding: 0 20px;
+      border: none;   
+  }
+  
 /* Reset */
-@import url(//codepen.io/chrisdothtml/pen/ojLzJK.css);
+
 .tiles {
   width: 1040px;
   font-size: 0;

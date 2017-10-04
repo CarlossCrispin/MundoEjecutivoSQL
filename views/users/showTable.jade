@@ -1,9 +1,35 @@
 extends ../templates/default
 include ../templates/nav
 block content
+  link(rel='stylesheet', href='/stylesheets/tab.css')
   section#about
-  div(class='col-md-8 col-md-offset-3')
-    h1(aling = "center")='Las 1000 Empresas más Importantes de México' 
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+           h2.title.text-center Las 1000 Empresas más Importantes de México
+           br
+           hr.light
+  .container
+    p 
+    p
+    div(class='col-md-8 col-md-offset-3')
+      table
+        thead()
+          tr
+            td  
+              #bot(onclick="location.href='/users/panel'", ) Regresar
+            td
+              if isAuthenticated
+                #bot(onclick="javascript:window.print()",disabled="disabled" ) Imprimir
+              if !isAuthenticated
+                #bot(onclick="swal('Oops...','No esta Suscrito!','warning')") Imprimir 
+            td  
+              #bot(onclick="tableToExcel('local', 'Mundo Ejecutivo')") Exportar 
+                P a Excel 
+  .container
+    p
+    p
+  .container       
   div(class='col-md-12 col-md-offset-0')
     div(class='table-responsive' )  
       table#local.table.table-striped 
@@ -45,7 +71,7 @@ block content
             td
           each item, i in items
             tr
-              td= item.Rank_1000_2015
+              td= item.Rank_1000_2015_id
               td= item.Rank_1000_2014
               td= item.Var_Pos_2014_2015
               td= item.Rank_Sector_2015
@@ -60,7 +86,7 @@ block content
               td= item.Var_Porcentaje_2014_2015
               td= item.Activo_Total_2015
               td= item.Var1_Porcentaje_2014_2015
-              td= item.Pasivo_Total
+              td= item.Pasivo_Total_2015
               td= item.Var3_Porcentaje_2014_2015
               td= item.Margen_Operativo_de_Ventas
               td= item.ROA
@@ -68,22 +94,19 @@ block content
               td= item.Liquidez
               td= item.País
               td= item.Sector
-      
-  br
-  br
+  
+            //link(rel='stylesheet', href='/stylesheets/buttons.css')
+              .buttons
+                h1
+                  | ejemplos
+                  code botones
+                button.fill Fill In
+                button.pulse Pulse
+                button.close Close
+                button.raise Raise
+                button.up Fill Up
+                button.slide Slide
+                button.offset Offset
 
-
-  container2
-    table(class="table table-striped")
-      thead()
-        tr
-          th        
-            button(type="button" onclick="location.href='/users/panel'" name="boton" class="btn btn-default")="Regresar"
-          th
-            button(type="button" onclick="javascript:window.print()"  class="btn btn-default" )="Imprimir"
-          th
-            button(type="button" onclick="tableToExcel('local', 'Mundo Ejecutivo')"  class="btn btn-default")="Exportar a Excel"
-
-
-    script(src='../javascripts/table.js') 
-    script(src='../javascripts/excel.js')
+      script(src='../javascripts/table.js') 
+      script(src='../javascripts/excel.js')

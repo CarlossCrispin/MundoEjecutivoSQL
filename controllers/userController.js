@@ -16,8 +16,10 @@ module.exports = {
 
 		var user = {
 			email : req.body.email,
-			nombre : req.body.nombre,
-			password : password,
+            nombre : req.body.nombre,
+            //revisar sql en la nube
+            //password : password,
+            password : req.body.password,
             img:src=('../images/per.jpg')
 		};
 

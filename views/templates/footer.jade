@@ -1,63 +1,68 @@
 link(rel='stylesheet', href='/stylesheets/footer.css')
     
-    
-div(class="footer")
-    div(class="container")
-        div(class="row")
-            div(class="col-md-3")
-                img(style='max-width:200px; margin-top: 7px;', src="../images/me1.png")
-                // h2(class="title")="New letter"
-                //form(action="./")
-                    div(class="input-group")
-                        input(type="text" class="form-control" placeholder="Email")
-                        span(class="input-group-btn")
-                            button(class="btn btn-default" type="button")
-                                    i(class="glyphicon glyphicon-ok") 
-                    p="Recibe nuestroas actualizaciones directamente en tu correo electrónico"  
-            div(class="col-md-3")
-                h2(class="title")="Ultimas entradas"
-                ul
-                    li
-                        a(href="#")="Titulo de la entrada"
-                    li
-                        a(href="#")="Titulo de la entrada"
-                    li
-                        a(href="#")="Titulo de la entrada"
-                    li
-                        a(href="#")="Titulo de la entrada"
-                    li
-                        a(href="#")="Titulo de la entrada"
-                    li
-                        a(href="#")="Titulo de la entrada"
-            div(class="col-md-3")
-                h2(class="title")="Mapa del sitio"
-                if !isAuthenticated
-                    ul  
-                        li
-                            a(href="/")="Inicio"
-                        li
-                            a(href="/auth/signup")= 'Registrarse'
-                        li
-                            a(href="/auth/signin")= 'Iniciar Sesión'
-                if isAuthenticated
-                        li
-                            a(href="/users/panel")= 'Perfil'
-                        li
-                            a(href="/auth/logout")= 'Cerrar Sesion'
-            div(class="col-md-3")
-                h2(class="title")="Contacto"
-                p   
-                    i(class="glyphicon glyphicon-map-marker")="1600 amphitheatre perkway"
-                p="Mountain Vie, CA 94043"
-                p
-                    i(class="glyphicon glyphicon-earphone")="Phone: +1 650-253-0000"
-                    
-div(class="copyright")
-    dic(class="container")
-        ul  
-            li
-                a(href="#")="Comunidad"
-            li
-                a(href="#")="Terminos de uso"
-            li
-                a(href="#")="Privacidad y condiciones"
+footer
+  .content-max-width
+    .menu.menu-footer-1.col-xs-6.col-sm-2
+      h3 Mapa del Sitio
+      ul.col-2
+        li
+          a(href="/")="Inicio"
+        if isAuthenticated
+          li
+              a(href="/users/panel") Perfil
+          li
+              a(href="/auth/logout") Cerrar Sesion
+        if !isAuthenticated
+          li
+              a(href="/auth/signup") Registrarse
+          li
+              a(href="/auth/signin") Iniciar Sesión
+        li
+          a(title='anchortext', href='#') 
+        
+    .menu.menu-footer-2.col-xs-6.col-sm-4
+      h3 Secciones
+      ul.col-2
+        li
+          a(title='anchortext', href='#') Rankings
+        li
+          a(title='anchortext', href='#') Las 1000 Empresas más Importartes
+        li
+          a(title='anchortext', href='#') América Latina
+        li
+          a(title='anchortext', href='#') Suscripción
+    .menu.menu-footer-3.col-xs-5.col-sm-2
+      h3 Noticias
+      ul
+        li
+          a(title='anchortext', href='#') Responsabilidad Social
+        li
+          a(title='anchortext', href='#') Influencers
+        li
+          a(title='anchortext', href='#') otros
+       
+    .menu.menu-footer-3.col-xs-5.col-sm-2
+      h3 Social
+      ul
+        li
+          a(title='anchortext', href='#') facebook
+        li
+          a(title='anchortext', href='#') Twitter
+        li
+          a(title='anchortext', href='#') Google+
+        li
+          a(title='anchortext', href='#') Instagram
+  .menu.menu-footer-1.col-xs-4.col-sm-2
+      h3 Contacto
+      ul
+        li
+           a.i(class="glyphicon glyphicon-map-marker")="1600 amphitheatre perkway"
+        li
+          a "Mountain Vie, CA 94043"
+        li
+          a.i(class="glyphicon glyphicon-earphone")="Phone: +1 650-253-0000"
+        li
+          a(title='anchortext', href='#') Más
+  .col-md-12.logo-footer
+    a(href='#', title='home')
+      img(alt='logo-MundoEjecutivo', title='logo-MundoEjecutivo', src="../images/me1.png")

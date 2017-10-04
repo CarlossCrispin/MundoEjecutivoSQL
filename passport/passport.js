@@ -75,11 +75,14 @@ module.exports = function(passport){
 			if(err) throw err;
 
 			db.end();
-
+            console.log(JSON.stringify(rows));
+            console.log(`----> ${password}`);
 			if(rows.length > 0){
 
-				var user = rows[0];
-				if(bcrypt.compareSync(password, user.password)){
+                var user = rows[0];
+                //revisar sql en la nube
+				//if(bcrypt.compareSync(password, user.password)){
+                if(password == user.password){
 					return done(null, {
 						id: user.id, 
 						nombre : user.nombre,

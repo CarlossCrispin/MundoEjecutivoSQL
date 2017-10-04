@@ -5,7 +5,7 @@ module.exports = {
         res.render('home',{
             isAuthenticated: req.isAuthenticated(),
             user : req.user,
-            message: req.flash('info'), authmessage : req.flash('authmessage')
+            message: req.flash('info'), authmessage : req.flash('authmessage'),authmessage1 : req.flash('authmessage1')
         });
         
     }

@@ -1,44 +1,22 @@
-.footer{
-    background-color: #272d34;
-    color: #fff;
-    padding-top: 24px;
-    padding-bottom: 24px;     
-}
-.footer .title{
-    font-size: 1.6em
-}
-.footer p{
-    color: #777;
-    font-size: 0.9em;
-    margin-top: 8px
-}
-.footer ul{
-    margin-left: 0px
-}
-.footer ul li a{
-    color: #999;
-    display: block;
-    padding: 2px;
-}
-.copyright{
-    background-color: #1a1e23;
-    color: #777
-}
-.copyright ul{
-    display: inline-block;
-    float: right;
-    list-style-type: none;
-    margin: 0px
-}
-.copyright ul li{
-    float: left;
-    margin-right: 16px
-}
-.copyright ul li a{
-    color: #fff
-}
+/*-----FOOTER------------*/
+footer{background-image:url('https://bewebestudio.es/wp-content/uploads/influencers_background.jpg'); background-size:cover; background-attachment: fixed; border-top:2px #18bd9b solid; padding-top:30px;  background-color:#333;  display: inline-block; width:100%; margin-top:50px;}
+footer .menu{display:inline-block;}
+.content-max-width{width:100%; max-width:1200px; margin:0px auto; }
+footer .content ul{margin-left:0px; padding-left:0px; dialay:block;}
+.col-2{-moz-column-count: 2; -moz-column-gap: 15px; -webkit-column-count: 2; -webkit-column-gap: 15px; column-count: 2; column-gap: 15px; }
+.col-2 li{display: flex; -webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;}
+footer .menu ul li{  margin-bottom: 8px;   list-style-type: none; }
+footer .menu ul li a{text-decoration:none; padding: 2px 9px 2px 5px;  }
+footer .menu-footer-1 ul li a{ color:#fff;}
+footer .menu-footer-1 ul li a:hover{ color:#18bd9b; }
+footer .menu-footer-3 ul li a, footer .menu-footer-2 ul li a{color:#333; background: #fff; }
+footer .menu-footer-3 ul li a:hover, footer  .menu-footer-2 ul li a:hover{background: #18bd9b;}
+footer .menu-footer-4 ul li a{background: #18bd9b; color:#333;}
+footer .menu-footer-4 ul li a:hover{background: #fff; color:#333;}
 
+footer .menu ul{padding:0px;}
 
-
+footer h3{text-shadow: 1px 1px 1px #333; border-bottom:1px solid #18bd9b; padding-bottom:10px; color:#fff; font-weight:100; margin-bottom:30px }
+.logo-footer{text-align:center; margin-top:30px; border-top:2px #18bd9b solid; padding:20px 0px; display: inline-block;    width: 100%;}
 
 

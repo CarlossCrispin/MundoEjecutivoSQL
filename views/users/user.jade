@@ -1,19 +1,27 @@
+link(rel='stylesheet', href='/stylesheets/panel.css')
 section#about
   .container
     .row
       .col-md-8.col-md-offset-2
-        h2.title.text-center entro !
-        hr.light
+        li(style='text-align: center;')
+            //img.img-circle(src=user.img)
+            img.img-circle(src="../images/per.jpg")
+        h2.title.text-center
+          i.fa.fa-key
+        h2.title.text-center Sesión de ...
+        h2.title.text-center(style='')="" + user.nombre 
         p
-          | Frontend web developer and web designer specialized in
+        hr.light
+        
 .container-2
   #page-wrapper
     .row
       .col-md-12
         .page-title
           h2
-            | Las 1000 Empresas más Importantes 
-            small de México
+            | Las 1000 Empresas más Importantes de México
+            small
+          hr 
           ol.breadcrumb
             li.active
               i.fa.fa-dashboard

@@ -2,6 +2,7 @@ body {
     font-family: Helvetica Neue, Arial, sans-serif;
     font-size: 14px;
     color: #444;
+    background-color: #fff;
   }
   
   table {
@@ -21,7 +22,7 @@ body {
   }
   
   td {
-    background-color: #f9f9f9;
+    background-color: #FFFFFF;
   }
   
   th, td {
@@ -57,4 +58,4 @@ body {
     border-right: 4px solid transparent;
     border-top: 4px solid #fff;
   }
-  
+ 
