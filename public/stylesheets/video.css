@@ -37,8 +37,8 @@ object-fit: fill;
   background: rgba(0,0,0,0.3);
   left: 70%;
   /*7777777777*/
-  width: 300px;
-  height: 400px;
+  width: auto;
+  height: auto;
   display: block;
   position: absolute;
   top: 180%;
