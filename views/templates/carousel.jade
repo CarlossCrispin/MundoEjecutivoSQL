@@ -1,28 +1,40 @@
 link(rel='stylesheet', href='/stylesheets/carousel.css')
-#bs-carousel.carousel.fade-carousel.slide(data-ride='carousel', data-interval='4000')
-    // opacidad
-    .overlay
-    // Indices
-    ol.carousel-indicators
-        li.active(data-target='#bs-carousel', data-slide-to='0')
-        li(data-target='#bs-carousel', data-slide-to='1')
-        li(data-target='#bs-carousel', data-slide-to='2')
-    // vistas 
-    .carousel-inner
-        .item.slides.active
-            img(src='./images/5.jpg', alt='', style='width:100%;')
-                
-        .item.slides
-            img(src='./images/6.jpg', alt='', style='width:100%;')
-            .hero
-                hgroup
-                h1 Emprender
-                h3 Descripción de la imagen
-                button.btn.btn-hero.btn-lg(role='button') Saber más...
-        .item.slides
-            img(src='./images/7.jpg', alt='', style='width:100%;')
-            .hero
-                hgroup
-                h1 Empresa
-                h3 Descripción de la imagen
-                button.btn.btn-hero.btn-lg(role='button') Saber más...
+section#carousel
+        #h1 Imagenes
+        hr
+    #mycarousel.carousel.slide(data-ride='carousel')
+        // Indicators
+        ol.carousel-indicators
+            li.active(data-target='#mycarousel', data-slide-to='0')
+            li(data-target='#mycarousel', data-slide-to='1')
+            li(data-target='#mycarousel', data-slide-to='2')
+            li(data-target='#mycarousel', data-slide-to='3')
+            li(data-target='#mycarousel', data-slide-to='4')
+        // Wrapper for slides
+        .carousel-inner(role='listbox')
+            .item
+                img(src='../images/5.jpg', data-color='lightblue', alt='First Image')
+                .carousel-caption
+                    #h3 Info
+            .item
+                img(src='../images/6.jpg', data-color='firebrick', alt='Second Image')
+                .carousel-caption
+                    #h3 info
+            .item
+                img(src='../images/7.jpg', data-color='violet', alt='Third Image')
+                .carousel-caption
+                    #h3 info
+                        //.item
+                            img(src='https://unsplash.it/2000/1250?image=658', data-color='lightgreen', alt='Fourth Image')
+                            .carousel-caption
+                                h3 Fourth Image
+                        
+        // Controls
+        a.left.carousel-control(href='#mycarousel', role='button', data-slide='prev')
+            span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+            span.sr-only Previous
+        a.right.carousel-control(href='#mycarousel', role='button', data-slide='next')
+            span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+            span.sr-only Next
+
+    script(src='../javascripts/carousel.js')

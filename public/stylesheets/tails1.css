@@ -1,59 +1,112 @@
 
-/*****************************************
-*********** SECTION PORTFOLIO ************
-*******************************************/
-
-.portfolio-box {
-  position: relative;
-  display: block;
-  max-width: 650px;
-  margin: 0 auto;
+.tiles {
+  font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+  font-size: 16px;
 }
-
-.portfolio-box .portfolio-box-caption {
-  color: white;
-  opacity: 0;
-  display: block;
-  background: rgba(24,189,155,0.9);
+.tiles .tile {
+  position: relative;
+  cursor: pointer;
+  margin: 10px;
+  padding: 5px 15px;
+  float: left;
+  overflow: hidden;
+}
+.tiles .tile.lg-tile {
+  height: 390px;
+  width: 390px;
+}
+.tiles .tile.lg-tile .tile-caption {
+  top: 351px;
+}
+.tiles .tile.sm-tile {
+  height: 190px;
+  width: 190px;
+}
+.tiles .tile.sm-tile .tile-caption {
+  top: 151px;
+}
+.tiles .tile.md-tile {
+  height: 190px;
+  width: 390px;
+}
+.tiles .tile.md-tile .tile-caption {
+  top: 151px;
+}
+.tiles .tile .tile-caption {
   position: absolute;
-  bottom: 0;
-  text-align: center;
+  left: 0;
+  padding: 0 10px 5px 10px;
+  color: #fff;
   width: 100%;
   height: 100%;
-  -webkit-transition: all 0.35s;
-  transition: all 0.35s;
+  background: rgba(0, 0, 0, 0.4);
+  -moz-transition: ease-in-out 0.3s;
+  -o-transition: ease-in-out 0.3s;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
 }
-
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
-  width: 100%;
-  text-align: center;
+.tiles .tile .tile-caption header {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #fff;
+}
+.tiles .tile .tile-caption .tile-arrow-up {
+  float: right;
+  line-height: 40px;
+  color: rgba(255, 255, 255, 0.8);
+  -moz-transition: ease-in-out 0.3s;
+  -o-transition: ease-in-out 0.3s;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+}
+.tiles .tile .tile-caption:hover {
+  top: 0;
+}
+.tiles .tile .tile-caption:hover .tile-content {
+  top: 25px;
+}
+.tiles .tile .tile-caption:hover .tile-arrow-up {
+  opacity: 0;
+}
+.tiles .tile .tile-content {
   position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px 10px;
+  height: 100%;
+  width: 100%;
+  top: 150px;
+  left: 0;
+  -moz-transition: ease-in-out 0.3s;
+  -o-transition: ease-in-out 0.3s;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
 }
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-  padding: 0 15px;
+.tiles .tile:active {
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px 1px;
 }
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 14px;
+.tile-row {
+  display: inline-block;
 }
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
-  font-size: 18px;
+.bg-blue {
+  background: #428bca;
+  color: #fff;
 }
-.portfolio-box:hover .portfolio-box-caption {
-  opacity: 1;
+.bg-light-blue {
+  background: #5bc0de;
+  color: #fff;
 }
-.portfolio-box:focus {
-  outline: none;
+.bg-green {
+  background: #5cb85c;
+  color: #fff;
 }
-
-.no-space > [class*='col-'] {
-  padding-right: 0;
-  padding-left: 0;
-  box-shadow: 0 0 3px #000;
+.bg-orange {
+  background: #f0ad4e;
+  color: #fff;
+}
+.bg-red {
+  background: #d9534f;
+  color: #fff;
+}
+.bg-image {
+  background: url('http://lorempixel.com/190/190/business/5/');
 }

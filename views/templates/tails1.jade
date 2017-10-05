@@ -1,52 +1,47 @@
 link(rel='stylesheet', href='/stylesheets/tails1.css')
 section#portfolio
-  .conatiner-fluid
-    .row.no-space
-      .col-md-4
-        a.portfolio-box(href='')
-          img.img-responsive(src='http://www.jasonnyback.com/wp-content/uploads/2012/07/stock_price_arrow-300x200.jpg', alt='auto')
-          .portfolio-box-caption
-            .portfolio-box-caption-content
-              .category
-                | Rankings
-              .project-name Rankings Semanales 
-      .col-md-4
-        a.portfolio-box(href='')
-          img.img-responsive(src='http://oi64.tinypic.com/v3putf.jpg', alt='maquetandola')
-          .portfolio-box-caption
-            .portfolio-box-caption-content
-              .category
-                | Las 1000 Empresas más Importantes de México
-              .project-name Listado de las Empresas con Informacion Fianciera
-      .col-md-4
-        a.portfolio-box(href='')
-          img.img-responsive(src='http://oi67.tinypic.com/2rpe2bb.jpg', alt='mayra velez')
-          .portfolio-box-caption
-            .portfolio-box-caption-content
-              .category
-                | Empresas
-              .project-name Empresas
-      .col-md-4
-        a.portfolio-box(href='')
-          img.img-responsive(src='http://oi66.tinypic.com/6sxh80.jpg', alt='are')
-          .portfolio-box-caption
-            .portfolio-box-caption-content
-              .category
-                | Suscripcion
-              .project-name Suscripcion
-      .col-md-4
-        a.portfolio-box(href='')
-          img.img-responsive(src='http://oi67.tinypic.com/zuqtmr.jpg', alt='vip tour')
-          .portfolio-box-caption
-            .portfolio-box-caption-content
-              .category
-                | Gráficos
-              .project-name Npumeros visuales 
-      .col-md-4
-        a.portfolio-box(href='')
-          img.img-responsive(src='http://oi64.tinypic.com/16bgc9u.jpg', alt='ogb')
-          .portfolio-box-caption
-            .portfolio-box-caption-content
-              .category
-                | Responsabilidad Social
-              .project-name Responsabilidad Social
+  .container
+    .tiles
+      .tile-row
+        .lg-tile.tile.bg-red
+          .tile-caption
+            header
+              | Mundo Ejecutivo
+              span.glyphicon.glyphicon-collapse-up.tile-arrow-up
+            |           más información.
+        a.sm-tile.tile.bg-orange(href='../users/showGrafic')
+          .tile-caption
+            header
+              | Gáfico 2
+              span.glyphicon.glyphicon-collapse-up.tile-arrow-up
+            |           Sectores.
+        .sm-tile.tile.bg-light-blue
+          .tile-caption
+            header
+              | Mundo Ejecutivo
+              span.glyphicon.glyphicon-collapse-up.tile-arrow-up
+            |           más información.
+        .md-tile.tile.bg-blue
+          .tile-caption
+            header
+              | Mundo Ejecutivo
+              span.glyphicon.glyphicon-collapse-up.tile-arrow-up
+            |           más información.
+        a.sm-tile.tile.bg-image(href='../users/showGrafic1')
+          .tile-caption
+            header
+              | Mundo Ejecutivo
+              span.glyphicon.glyphicon-collapse-up.tile-arrow-up
+            |           más información.
+        a.sm-tile.tile.bg-light-blue(href='../users/showGrafic1')
+          .tile-caption
+            header
+              | Gráfico 1
+              span.glyphicon.glyphicon-collapse-up.tile-arrow-up
+            |           Ranking vs .
+        a.md-tile.tile.bg-red(href='../users/showTable')
+          .tile-caption
+            header
+              | Mundo Ejecutivo
+              span.glyphicon.glyphicon-collapse-up.tile-arrow-up
+            |           las 1000 Empresas

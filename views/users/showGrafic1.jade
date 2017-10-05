@@ -24,25 +24,19 @@ block content
         h1 DATOS MOSTRADOS EN EL GRÁFICO
     div(class='col-md-10 col-md-offset-1') 
         table#datatable.table-bordered
-            thead
-                
+            thead 
                 th
-                each item, i in items
-                    th= item.Empresa
-                        
-                        
-                        
+                th Rank 2015
+                th Rank 2014
+                th Var.Pos 2014/2015
                 
             tbody
-                
+                each item, i in items
                     tr
-                        th Rank 2015
-                        each item, i in items
-                            td(style="text-align:center;")=item.Rank_1000_2014
-                    tr
-                        th Rank 2014  
-                        each item, i in items
-                            td(style="text-align:center;")=item.Rank_1000_2015
+                        th= item.Empresa
+                        td(style="text-align:center;")=item.Rank_1000_2015_id
+                        td(style="text-align:center;")=item.Rank_1000_2014
+                        td(style="text-align:center;")= item.Var_Pos_2014_2015
             
     
     br

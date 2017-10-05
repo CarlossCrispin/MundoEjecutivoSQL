@@ -1,6 +1,8 @@
-body {
-  margin: 0;
-  background: #000; 
+
+.full-screen {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 video { 
     position: fixed;
@@ -31,7 +33,7 @@ video {
   float: right;
   font-size: 1.2rem;
 }
-h1 {
+#h1 {
   font-size: 3rem;
   text-transform: uppercase;
   margin-top: 0;
@@ -53,10 +55,10 @@ h1 {
   transition: .3s background;
 }
 #polina button:hover { 
-   background: rgba(0,0,0,0.5);
+   background:  #18bd9b;
 }
 
-a {
+#a {
   display: inline-block;
   color: #fff;
   text-decoration: none;
@@ -64,7 +66,7 @@ a {
   padding: .5rem;
   transition: .6s background; 
 }
-a:hover{
+#a:hover{
   background:rgba(0,0,0,0.9);
 }
 @media screen and (max-width: 500px) { 

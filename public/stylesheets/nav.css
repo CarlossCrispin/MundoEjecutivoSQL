@@ -55,7 +55,10 @@ hr.light{
 	border-top: 4px solid #fff;
 	max-width: 100px;
 }
-
+#h1{
+	color: #fff;
+	text-align: center;
+	}
 section{
 	padding: 2.5em 0;
 }
